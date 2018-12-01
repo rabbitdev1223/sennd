@@ -3,7 +3,7 @@ var http    = require("http");              // http server core module
 var express = require("express");           // web framework external module
 var serveStatic = require('serve-static');  // serve static files
 var socketIo = require("socket.io");        // web socket external module
-
+var path = require
 // This sample is using the easyrtc from parent folder.
 // To use this server_example folder only without parent folder:
 // 1. you need to replace this "require("../");" by "require("easyrtc");"
@@ -16,7 +16,13 @@ process.title = "node-easyrtc";
 
 // Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var app = express();
-app.use(serveStatic('build', {'index': ['index.html']}));
+
+// app.use('/',express.static('build'));
+app.use(express.static('build'));
+
+app.use("/room/*", function(req, resp) {
+    resp.sendFile(__dirname+ "/build/index.html");
+  });
 
 // Start Express http server on port 8080
 var webServer = http.createServer(app);
