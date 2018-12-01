@@ -23,7 +23,10 @@
 //ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //POSSIBILITY OF SUCH DAMAGE.
 //
-var selfEasyrtcid = "";
+
+console.log(document.location.href.split('/')[3].split('-')[1])
+
+var selfEasyrtcid = document.location.href.split('/')[3].split('-')[1];
 var peers = {};
 
 // function buildPeerBlockName(easyrtcid) {
@@ -173,7 +176,7 @@ function connect() {
 //         }
 
 
-//         var noDCs = {}; // which users don't support data channels
+           var noDCs = {}; // which users don't support data channels
 
 //         var fileSender = null;
 //         function filesHandler(files) {
@@ -236,41 +239,41 @@ function connect() {
 
 
 
-// function acceptRejectCB(otherGuy, fileNameList, wasAccepted) {
+function acceptRejectCB(otherGuy, fileNameList, wasAccepted) {
 
-//     var receiveBlock = document.getElementById(buildReceiveAreaName(otherGuy));
-//     jQuery(receiveBlock).empty();
-//     receiveBlock.style.display = "inline-block";
+    var receiveBlock = document.getElementById(buildReceiveAreaName(otherGuy));
+    jQuery(receiveBlock).empty();
+    receiveBlock.style.display = "inline-block";
 
-//     //
-//     // list the files being offered
-//     //
-//     receiveBlock.appendChild(document.createTextNode("Files offered"));
-//     receiveBlock.appendChild(document.createElement("br"));
-//     for (var i = 0; i < fileNameList.length; i++) {
-//         receiveBlock.appendChild(
-//                 document.createTextNode("  " + fileNameList[i].name + "(" + fileNameList[i].size + " bytes)"));
-//         receiveBlock.appendChild(document.createElement("br"));
-//     }
-//     //
-//     // provide accept/reject buttons
-//     //
-//     var button = document.createElement("button");
-//     button.appendChild(document.createTextNode("Accept"));
-//     button.onclick = function() {
-//         jQuery(receiveBlock).empty();
-//         wasAccepted(true);
-//     };
-//     receiveBlock.appendChild(button);
+    //
+    // list the files being offered
+    //
+    receiveBlock.appendChild(document.createTextNode("Files offered"));
+    receiveBlock.appendChild(document.createElement("br"));
+    for (var i = 0; i < fileNameList.length; i++) {
+        receiveBlock.appendChild(
+                document.createTextNode("  " + fileNameList[i].name + "(" + fileNameList[i].size + " bytes)"));
+        receiveBlock.appendChild(document.createElement("br"));
+    }
+    //
+    // provide accept/reject buttons
+    //
+    var button = document.createElement("button");
+    button.appendChild(document.createTextNode("Accept"));
+    button.onclick = function() {
+        jQuery(receiveBlock).empty();
+        wasAccepted(true);
+    };
+    receiveBlock.appendChild(button);
 
-//     button = document.createElement("button");
-//     button.appendChild(document.createTextNode("Reject"));
-//     button.onclick = function() {
-//         wasAccepted(false);
-//         receiveBlock.style.display = "none";
-//     };
-//     receiveBlock.appendChild(button);
-// }
+    button = document.createElement("button");
+    button.appendChild(document.createTextNode("Reject"));
+    button.onclick = function() {
+        wasAccepted(false);
+        receiveBlock.style.display = "none";
+    };
+    receiveBlock.appendChild(button);
+}
 
 
 // function receiveStatusCB(otherGuy, msg) {

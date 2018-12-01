@@ -20,7 +20,7 @@ var app = express();
 // app.use('/',express.static('build'));
 app.use(express.static('build'));
 
-app.use("/room/*", function(req, resp) {
+app.use("/room-*", function(req, resp) {
     resp.sendFile(__dirname+ "/build/index.html");
   });
 
