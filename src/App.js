@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'antd/dist/antd.css'
-import {FileDrop} from './components'
+import {QrSquare, FileDrop} from './components'
 import { Card } from 'antd';
 
 
@@ -16,7 +16,7 @@ class App extends Component {
           style={{width: '100%', maxWidth:'500px'}}
         >
           <FileDrop />
-
+          <QrSquare />
           </Card>
         </div>
     );
