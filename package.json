@@ -17,6 +17,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://sennd.me",
   "browserslist": [
     ">0.2%",
     "not dead",
