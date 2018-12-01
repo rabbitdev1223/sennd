@@ -5,6 +5,13 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <script type="text/javascript" src="/easyrtc/socket.io.js"></script>
+  <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="../easyrtc/easyrtc.js"></script>
+  <script type="text/javascript" src="../easyrtc/easyrtc_ft.js"></script>
+  <script type="text/javascript" src="js/demo_data_channel_filesharing.js"></script>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -22,7 +29,7 @@
     -->
     <title>Sennd.me</title>
   </head>
-  <body>
+  <body  onload="connect();">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
