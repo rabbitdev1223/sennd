@@ -21,19 +21,19 @@ class FileDrop extends React.Component {
   render() {
     return (
       <section>
-        <div className="dropzone">
+        <div className="dropzone flex justify-center">
           <Dropzone
             onDrop={this.onDrop.bind(this)}
             onFileDialogCancel={this.onCancel.bind(this)}
           >
-            <p>Try dropping some files here, or click to select files to upload.</p>
+            <p className='ma2'>Try dropping some files here, or click to select files to upload.</p>
           </Dropzone>
         </div>
         <aside>
-          <h2>Dropped files</h2>
+          <h2 className='mt4'>Dropped files</h2>
           <ul>
             {
-              this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+              this.state.files.map(f => <li className='list' key={f.name}>{f.name} - {f.size} bytes</li>)
             }
           </ul>
         </aside>
