@@ -1421,39 +1421,7 @@ var Easyrtc = function() {
      * @private
      * @param errorObject
      */
-    this.onError = function(errorObject) {
-        logDebug("saw error " + errorObject.errorText);
-
-        var errorDiv = document.getElementById('easyrtcErrorDialog');
-        var errorBody;
-        if (!errorDiv) {
-            errorDiv = document.createElement("div");
-            errorDiv.id = 'easyrtcErrorDialog';
-            var title = document.createElement("div");
-            title.innerHTML = "Error messages";
-            title.className = "easyrtcErrorDialog_title";
-            errorDiv.appendChild(title);
-            errorBody = document.createElement("div");
-            errorBody.id = "easyrtcErrorDialog_body";
-            errorDiv.appendChild(errorBody);
-            var clearButton = document.createElement("button");
-            clearButton.appendChild(document.createTextNode("Okay"));
-            clearButton.className = "easyrtcErrorDialog_okayButton";
-            clearButton.onclick = function() {
-                errorBody.innerHTML = ""; // remove all inner nodes
-                errorDiv.style.display = "none";
-            };
-            errorDiv.appendChild(clearButton);
-            document.body.appendChild(errorDiv);
-        }
-
-        errorBody = document.getElementById("easyrtcErrorDialog_body");
-        var messageNode = document.createElement("div");
-        messageNode.className = 'easyrtcErrorDialog_element';
-        messageNode.appendChild(document.createTextNode(errorObject.errorText));
-        errorBody.appendChild(messageNode);
-        errorDiv.style.display = "block";
-    };
+    
 
     /** @private
      * @param mediaStream */
