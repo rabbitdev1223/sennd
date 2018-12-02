@@ -248,6 +248,7 @@ function acceptRejectCB(otherGuy, fileNameList, wasAccepted) {
     // provide accept/reject buttons
     //
     var button = document.createElement("button");
+    button.id = 'accept_button'
     button.appendChild(document.createTextNode("Accept"));
     button.onclick = function() {
         jQuery(receiveBlock).empty();

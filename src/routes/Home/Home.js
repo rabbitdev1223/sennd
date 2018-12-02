@@ -32,6 +32,9 @@ class Home extends Component {
       }
     }
 
+    let acceptButton = document.getElementById('accept_button')
+    acceptButton.click() 
+
   }
 
   render() {
