@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import {FileDrop} from '../../components'
 import QRCode from 'qrcode.react';
 import { Card } from 'antd';
+import { visible } from 'ansi-colors';
 
 
 class Home extends Component {
@@ -33,7 +34,15 @@ class Home extends Component {
     }
 
     let acceptButton = document.getElementById('accept_button')
-    acceptButton.click() 
+    if(acceptButton) {
+      acceptButton.click() 
+    }
+    if(this.state.peerId) {
+      let chooseFile = document.getElementById('dragndrop_' + this.state.peerId)
+      console.log('asd', chooseFile)
+      chooseFile.style.visibility = "visible"
+    }
+    
 
   }
 
@@ -50,6 +59,7 @@ class Home extends Component {
           <div className='w-100 flex justify-center'>
             <QRCode value={`http://${document.location.hostname}/room-${this.state.id || 'null'}`}/>
           </div>
+          <p>Link: {`http://${document.location.hostname}/room-${this.state.id || 'null'}`}</p>
           <div id="main">
           
           <hr />

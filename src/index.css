@@ -14,9 +14,6 @@ body {
   visibility: hidden;
 }
 
-.fileInput {
-  visibility: visible;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
