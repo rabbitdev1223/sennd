@@ -59,7 +59,6 @@ class Home extends Component {
           <div className='w-100 flex justify-center'>
             <QRCode value={`http://${document.location.hostname}/room-${this.state.id || 'null'}`}/>
           </div>
-          <p>Link: {`http://${document.location.hostname}/room-${this.state.id || 'null'}`}</p>
           <div id="main">
           
           <hr />
