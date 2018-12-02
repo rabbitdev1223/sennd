@@ -5,7 +5,12 @@ import { Card } from 'antd';
 
 
 class Home extends Component {
-  state = {}
+  constructor() {
+    super()
+    this.state = {
+      peerId: window.location.href.split('/')[3].split('-')[1] || null
+    }
+  }
   componentDidMount() {
     this.timer = setInterval(()=> this.getId(), 1000);
   }
@@ -15,14 +20,23 @@ class Home extends Component {
   }
 
   getId() {
-    this.setState({ id: document.getElementById('iam').innerHTML || null})
-    if(this.state.id) {
+    if(!this.state.id) {
+      this.setState({ id: document.getElementById('iam').innerHTML || null})
       console.log(this.state.id)
-      clearInterval(this.timer)
     }
+    if(this.state.peerId && !this.state.connected) {
+      let connect = document.getElementById('connectbutton_' + this.state.peerId);
+      if (connect) {
+        connect.click()
+        this.setState({connected: true})
+      }
+    }
+
   }
 
   render() {
+    console.log(this.state.peerId)
+
     return (
       <div className="pa3 flex justify-center w-100">
         <Card
