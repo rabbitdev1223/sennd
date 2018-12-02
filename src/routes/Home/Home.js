@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import {FileDrop} from '../../components'
 import QRCode from 'qrcode.react';
 import { Card } from 'antd';
-import { visible } from 'ansi-colors';
 
 
 class Home extends Component {
